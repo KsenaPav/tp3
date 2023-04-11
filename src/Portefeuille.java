@@ -24,7 +24,6 @@ public class Portefeuille {
         **/
       if ( destination      == null              ) return false;
       if ( montantJetons     > this.montant      ) return false;
-      if ( destination.getNom().equals(this.getNom())) return false;
       
       this       .montant -= montantJetons;
       destination.montant += montantJetons;
