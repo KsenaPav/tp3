@@ -47,7 +47,7 @@ Si vous voulez suivre le développement depuis la branche princiaple, tappez la 
 Si vous voulez merger deux branches, par exemple, main et test, aller tous dabord sur la branche main puis tapper la commande :
 `git merge test`
 
-Vous pouvez voir maintenant avec la commande `ls` tous les fichiers de main et de test. 
+Vous pouvez voir maintenant avec la commande `ls` tous les fichiers de main et de test 
 
 
 
