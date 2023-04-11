@@ -29,6 +29,7 @@ Pour ce faire, nous pouvons travailler dans une nouvelle branche.
 Avec la commande `git branch` vous pouvez savoir sur quel branche vous êtes.
 
 Avec la commande `git checkout -b test`, vous pourrez crée et vous deplacer sur la branche test.
+
 *L'option -b permet de dire à **checkout** que nous créons et nous déplacons sur la branche*
 
 Pour se déplacer de branche en branche, vous avez juste à utiliser la commande `git checkout nomBranche`
