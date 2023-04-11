@@ -10,7 +10,7 @@ public class TestCryptoMarche {
         Portefeuille antoineEth = new Portefeuille(ethereum, 10, "Antoine");
         Portefeuille aliceBtc   = new Portefeuille(bitcoin,   5, "Alice"  );
 
-        //Creation du marchГ©
+        //Creation du marché
         CryptoMarche marche = CryptoMarche.getInstance();
         marche.ajouter(antoineBtc);
         marche.ajouter(antoineEth);
