@@ -21,26 +21,28 @@ Demandez à votre collègue (que nous appellerons *Portos*) son nom d'utilisateu
 
 ***
 
-## Les branches
+## Gérer des nouvelles fonctionnalités à l’aide des branches
 
-Imaginons nous voulons tester une fonctionnalités dans une autre branche avant de l'intégré dans la branche principal.
-Pour cela, nous pouvons travailler sur une autre branche.
+Supposons que nous ayons des "ramifications" dans les idées et la mise en œuvre du projet, ou que nous voulions tester une fonctionnalité dans une autre branche avant de l'intégrer dans la branche principale.
+Pour ce faire, nous pouvons travailler dans une nouvelle branche.
 
 Avec la commande `git branch` vous pouvez savoir sur quel branche vous êtes.
 
 Avec la commande `git checkout -b test`, vous pourrez crée et vous deplacer sur la branche test.
-_L'option -b permet de dire à **checkout** que nous créons et nou déplacons sur la branche_
+
+*L'option -b permet de dire à **checkout** que nous créons et nous déplacons sur la branche*
 
 Pour se déplacer de branche en branche, vous avez juste à utiliser la commande `git checkout nomBranche`
 
-Note : lorsque vous crée des fichier dans les branches (par exemple la branche test), ils ne seront pas visible par la branche main.
+***Remarque : lorsque vous crée des fichier dans les branches (par exemple la branche test), ils ne seront pas visible par la branche main.***
 
 Si vous voulez suivre le développement depuis la branche princiaple, tappez la commande :
+
 `git log --graph --oneline --all --decorate --topo-order`
 
 ***
 
-## Fusionner deux branches
+## Fusionner la branche de test dans la branche principale
 
 Si vous voulez merger deux branches, par exemple, main et test, aller tous dabord sur la branche main puis tapper la commande :
 `git merge test`
