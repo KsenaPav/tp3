@@ -10,40 +10,51 @@ public class Portefeuille {
   }
 
   /**
-   * Cette fonction vous permet de transfГ©rer des devises du portefeuille actuel 
-   * vers le portefeuille de destination pour le montant indiquГ©. Le type de devise 
-   * (nom du Jeton) doit ГЄtre le mГЄme entre les deux portefeuilles et le montant 
-   * du portefeuille actuel doit ГЄtre supГ©rieur ou Г©gal Г  celui indiquГ©.
+   * Cette fonction vous permet de transférer des devises du portefeuille actuel 
+   * vers le portefeuille de destination pour le montant indiqué. Le type de devise 
+   * (nom du Jeton) doit être le même entre les deux portefeuilles et le montant 
+   * du portefeuille actuel doit être supérieur ou égal à celui indiqué.
    * @param destination 
    * @param montantJetons
-   * @return Vrai si la transaction a Г©tГ© effectuГ©e, faux sinon.  
+   * @return Vrai si la transaction a été effectuée, faux sinon.  
    */
   public boolean transfertDevise (Portefeuille destination, double montantJetons){
-      /**
-           FONCTION ГЂ IMPLEMENTER
-	  **/
-      return false;
+        /**
+            FONCTION À IMPLEMENTER
+        **/
+      if ( destination      == null              ) return false;
+      if ( montantJetons     > this.montant      ) return false;
+      if ( destination.getNom().equals(this.getNom())) return false;
+      
+      this       .montant -= montantJetons;
+      destination.montant += montantJetons;
+      
+      return true;
   }
 
   /**
-   * Cette fonction vous permet d'acheter des jetons de la 
-   * crypto-devise en fonction de leur valeur en euros. 
-   * Le rГ©sultat est l'augmentation des jetons de la crypto-monnaie.
-   * @param montantEuros Valeur d'achat en euros 
-   * @return true si le montant en euros est supГ©rieur ou Г©gal Г  0 
+        * Cette fonction vous permet d'acheter des jetons de la 
+        * crypto-devise en fonction de leur valeur en euros. 
+        * Le résultat est l'augmentation des jetons de la crypto-monnaie.
+        * @param montantEuros Valeur d'achat en euros 
+        * @return true si le montant en euros est supérieur ou égal à 0 
    */
   public boolean achatDevise (double montantEuros){
 	/**
-           FONCTION ГЂ IMPLEMENTER
+           FONCTION À IMPLEMENTER
 	**/
-    return false;
+    if (montantEuros < 0 ) return false;
+    
+    this.montant += montantEuros;
+    
+    return true;
   }
 
   /**
-   * Valide si le proprietaire passГ© en parametre est celui
+   * Valide si le proprietaire passé en parametre est celui
    * qui as le portefeuille
    * @param proprietaire
-   * @return true si les nom du propriГ©taire est correct
+   * @return true si les nom du propriétaire est correct
    */
   public boolean estProprietaire (String proprietaire){
         return (proprietaire.equals(this.proprietaire))?true:false;
@@ -52,7 +63,7 @@ public class Portefeuille {
   /**
    * 
    * @return La valeur en euros du Portefeuille. 
-   * Autrement dit, le monant de jetons multipliГ© par la valeur des jetons. 
+   * Autrement dit, le monant de jetons multiplié par la valeur des jetons. 
    */
   public double valeurEnEuros(){
       return this.montant * this.monnaie.getValeurDeJeton();
